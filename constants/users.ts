@@ -1,17 +1,17 @@
 export const VALID_USER = {
-    username: "",
-    password: "",
-    handle: "@"
+    username: process.env.VALID_USERNAME,
+    password: process.env.VALID_PASSWORD,
+    handle: `@${process.env.VALID_USERNAME}`
 };
 
 export const INVALID_PASSWORD = {
-    username: "",
+    username: process.env.VALID_USERNAME,
     password: "wrongPassword",
-    handle: "@"
+    handle: `@${process.env.VALID_USERNAME}`
 };
 
 export const INVALID_USERNAME = {
     username: "wrongUsername",
-    password: "",
-    handle: "@"
+    password: process.env.VALID_PASSWORD,
+    handle: `@${process.env.VALID_USERNAME}`
 };

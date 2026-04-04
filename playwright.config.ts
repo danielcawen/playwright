@@ -34,30 +34,19 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    // --- Desktop ---
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'Desktop Chrome',
+      use: { ...devices['Desktop Chrome'] }, // 1280x720
     },
-
     {
-      name: 'firefox',
+      name: 'Desktop Firefox',
       use: { ...devices['Desktop Firefox'] },
     },
-
     {
-      name: 'webkit',
+      name: 'Desktop Safari',
       use: { ...devices['Desktop Safari'] },
     },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
 
     /* Test against branded browsers. */
     // {
@@ -68,7 +57,28 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
+
+    // --- Tablet ---
+    {
+      name: 'Tablet Chrome',
+      use: { ...devices['Galaxy Tab S4'] }, // ~1138x712
+    },
+    {
+      name: 'Tablet Safari',
+      use: { ...devices['iPad Pro 11'] },   // ~834x1194
+    },
+
+    // --- Mobile ---
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 5'] },       // 393x851
+    },
+    {
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 12'] },     // 390x844
+    },
   ],
+
 
   /* Run your local dev server before starting the tests */
   // webServer: {

@@ -1,8 +1,8 @@
 import { test } from "@playwright/test";
 import { faker } from '@faker-js/faker';
 import * as loginPage from "../pages/login.ts";
-import verifyLoggedUser from "../pages/sidebar.ts";
 import * as signupPage from "../pages/signup.ts";
+import * as onboardPage from "../pages/onboard.ts";
 
 test("can create a new user", async ({ page }) => {
     let firstName = faker.person.firstName();
@@ -23,5 +23,5 @@ test("can create a new user", async ({ page }) => {
     await loginPage.goToSignUpPage(page);
     await signupPage.signup(page, newUser);
     await loginPage.login(page, newUser.username, newUser.password);
-    await verifyLoggedUser(page, `@${newUser.username}`);
+    await onboardPage.onboardDashboardIsDisplayed(page);
 });

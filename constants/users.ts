@@ -1,17 +1,28 @@
+function requireEnv(name: string): string {
+    const value = process.env[name];
+    if (!value) {
+        throw new Error(`Missing required environment variable: ${name}`);
+    }
+    return value;
+}
+
+const VALID_USERNAME = requireEnv("VALID_USERNAME");
+const VALID_PASSWORD = requireEnv("VALID_PASSWORD");
+
 export const VALID_USER = {
-    username: process.env.VALID_USERNAME,
-    password: process.env.VALID_PASSWORD,
-    handle: `@${process.env.VALID_USERNAME}`
+    username: VALID_USERNAME,
+    password: VALID_PASSWORD,
+    handle: `@${VALID_USERNAME}`
 };
 
 export const INVALID_PASSWORD = {
-    username: process.env.VALID_USERNAME,
+    username: VALID_USERNAME,
     password: "wrongPassword",
-    handle: `@${process.env.VALID_USERNAME}`
+    handle: `@${VALID_USERNAME}`
 };
 
 export const INVALID_USERNAME = {
     username: "wrongUsername",
-    password: process.env.VALID_PASSWORD,
-    handle: `@${process.env.VALID_USERNAME}`
+    password: VALID_PASSWORD,
+    handle: `@${VALID_USERNAME}`
 };

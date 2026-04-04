@@ -1,14 +1,17 @@
 import { test } from "@playwright/test";
 import * as loginPage from "../pages/login.ts";
-import verifyLoggedUser from "../pages/sidebar.ts";
+import { verifyLoggedUser } from "../pages/sidebar.ts";
 import * as users from "../constants/users.ts";
 
 test("can login with valid credentials", async ({ page }) => {
+  const viewport = page.viewportSize();
+  const isMobile = viewport!.width < 768;
+
   await page.goto("/");
 
   await loginPage.login(page, users.VALID_USER.username, users.VALID_USER.password);
 
-  await verifyLoggedUser(page, users.VALID_USER.handle);
+  await verifyLoggedUser(page, users.VALID_USER.handle, isMobile);
 });
 
 test("cannot login with invalid password", async ({ page }) => {

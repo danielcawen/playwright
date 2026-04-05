@@ -16,10 +16,15 @@ this is using the cypress real world app as the base for the app to test
 
 ## how to run the tests locally
 
-1. Copy the example env file: `cp .env.example .env`
-2. Fill in the credentials in `.env`
+1. Copy the example env file: `cp .env.example .env.local`
+2. Fill in the credentials in `.env.local`
 3. Install dependencies: `yarn install`
 4. Run the tests: `yarn playwright test --ui`
 
 ### note
 - this is an example on how to handle the secrets; for this example the username/password are in the cypress real world app
+
+## how to run test on other .env
+- `NODE_ENV=staging yarn playwright test --ui`
+- `NODE_ENV=prod yarn playwright test --ui`
+- local is the default one

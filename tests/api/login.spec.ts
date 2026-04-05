@@ -1,12 +1,12 @@
-import { test, expect } from "@playwright/test";
-import * as loginPage from "../pages/api/login";
-import * as users from "../constants/users";
+import { test } from "@playwright/test";
+import * as loginPage from "../../pages/api/login";
+import * as users from "../../constants/users";
 
 let apiContext: any;
 
 test.beforeAll(async ({ playwright }) => {
     apiContext = await playwright.request.newContext({
-        baseURL: 'http://localhost:3001',
+        baseURL: process.env.BASE_URL_API,
         extraHTTPHeaders: {
         },
     });

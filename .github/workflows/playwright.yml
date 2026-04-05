@@ -17,9 +17,9 @@ jobs:
     - name: Install dependencies
       run: yarn install --frozen-lockfile
     - name: Install Playwright Browsers
-      run: yarn playwright install --with-deps
+      run: yarn playwright install --with-deps --with-browsers=webkit
     - name: Run Playwright tests
-      run: yarn playwright test tests/db/users.spec.ts --project="Desktop Chrome"
+      run: yarn playwright test tests/db/users.spec.ts --project="Desktop Safari"
       env:
         DB_HOST: ${{ secrets.DB_HOST }}
         DB_PORT: ${{ secrets.DB_PORT }}

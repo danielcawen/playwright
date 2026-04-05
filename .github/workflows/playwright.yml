@@ -17,7 +17,7 @@ jobs:
     - name: Install dependencies
       run: yarn install --frozen-lockfile
     - name: Install Playwright Browsers
-      run: yarn playwright install --with-deps --with-browsers=webkit
+      run: yarn playwright install webkit --with-deps
     - name: Run Playwright tests
       run: yarn playwright test tests/db/users.spec.ts --project="Desktop Safari"
       env:

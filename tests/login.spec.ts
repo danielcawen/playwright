@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
-import * as loginPage from "../pages/login.ts";
-import { verifyLoggedUser } from "../pages/sidebar.ts";
-import * as users from "../constants/users.ts";
+import * as loginPage from "../pages/login";
+import { verifyLoggedUser } from "../pages/sidebar";
+import * as users from "../constants/users";
 
 test("can login with valid credentials", async ({ page }) => {
   const viewport = page.viewportSize();

@@ -1,4 +1,3 @@
-import { expect } from "@playwright/test";
 
 const firstNameInputLocator = '[data-test="signup-first-name"] input';
 const lastNameInputLocator = '[data-test="signup-last-name"] input';
@@ -6,7 +5,6 @@ const usernameInputLocator = '[data-test="signup-username"] input';
 const passwordInputLocator = '[data-test="signup-password"] input';
 const confirmPasswordInputLocator = '[data-test="signup-confirmPassword"] input';
 const submitButtonLocator = '[data-test="signup-submit"]';
-// const errorMessageLocator = '[data-test="signin-error"]';
 
 
 export async function signup(page: any, args: any) {

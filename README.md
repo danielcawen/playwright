@@ -55,7 +55,7 @@ Pipeline steps:
 4. Run tests with secrets injected from GitHub repository settings
 5. Upload HTML report as build artifact (planned)
 
-Credentials are never hardcoded. The `.env.example` file documents required variables; the actual `.env` is gitignored, and the CI uses GitHub Secrets.
+Credentials are never hardcoded. The `.env.example` file documents required variables; the actual `.env.local` (staging/prod/etc) is gitignored, and the CI uses GitHub Secrets.
 
 
 *CI/CD Diagram - Status: Proposed*

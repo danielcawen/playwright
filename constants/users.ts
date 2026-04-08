@@ -1,23 +1,6 @@
-import * as dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { userConfig } from '../config';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const env = process.env.NODE_ENV || 'local';
-dotenv.config({ path: path.resolve(__dirname, `../config/.env.${env}`) });
-
-function requireEnv(name: string): string {
-    const value = process.env[name];
-    if (!value) {
-        throw new Error(`Missing required environment variable: ${name}`);
-    }
-    return value;
-}
-
-const VALID_USERNAME = requireEnv("VALID_USERNAME");
-const VALID_PASSWORD = requireEnv("VALID_PASSWORD");
+const { username: VALID_USERNAME, password: VALID_PASSWORD } = userConfig;
 
 export const VALID_USER = {
     username: VALID_USERNAME,
